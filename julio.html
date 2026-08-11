@@ -419,15 +419,41 @@
 
 <script>
 
-function verificar() {
+async function verificar() {
 
-    document
-        .getElementById("contenido")
-        .style.display = "block";
+    const respuesta = document.getElementById("respuesta").value.trim();
 
-    document
-        .getElementById("quiz")
-        .style.display = "none";
+    if (respuesta === "") {
+        alert("Escribe algo para mí primero, amor 💗");
+        return;
+    }
+
+    const datos = {
+        mes: "Julio",
+        respuesta: respuesta
+    };
+
+    try {
+
+        await fetch("https://script.google.com/macros/s/AKfycbwpOOkjOcgJQ7ZZf8t0M_BzqXsmVe3jmyHkmI_RtY0TjOdRxATg7yRXLTENfIjyJrok/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(datos)
+        });
+
+        document.getElementById("contenido").style.display = "block";
+        document.getElementById("quiz").style.display = "none";
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Hubo un pequeño problema, intenta otra vez 💗");
+
+    }
 
 }
 
