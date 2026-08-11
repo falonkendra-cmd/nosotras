@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Enero 💖</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            ❤️ Sofi & Kendra
+        </a>
+
+        <a class="btn btn-light" href="meses.html">
+            🗓️ Volver a meses
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container mt-5">
+
+    <h1 class="titulo text-center">
+        💖 Enero
+    </h1>
+
+
+    <div class="instagram-grid">
+
+        <img src="img/ima10.JPG">
+        <img src="img/ima11.JPG">
+        <img src="img/ima12.JPG">
+        <img src="img/ima13.JPG">
+
+    </div>
+
+
+    <div class="text-center mt-4">
+
+        <button
+            class="btn-love"
+            onclick="mostrarCarta()"
+        >
+            💌 Abrir carta
+        </button>
+
+    </div>
+
+
+    <p
+        id="cartaEne"
+        class="love-box text-center"
+        style="display:none;"
+    ></p>
+
+</div>
+
+
+<script>
+
+const texto =
+"Amor, este mes siento que genuinamente nos puso a prueba, pero realmente me hizo darme cuenta de lo afortunada que soy por haberme encontrado con la estrella más brillante de este planeta. No solo por la persona que eres, sino porque nunca soltaste mi manita y te quedaste conmigo cuando todo se puso difícil, te amo mi amor.💖🌙";
+
+let i = 0;
+
+function mostrarCarta() {
+
+    const carta =
+        document.getElementById("cartaEne");
+
+    carta.style.display = "block";
+
+    carta.innerHTML = "";
+
+    i = 0;
+
+    const intervalo = setInterval(() => {
+
+        carta.innerHTML += texto[i];
+
+        i++;
+
+        if (i >= texto.length) {
+
+            clearInterval(intervalo);
+
+        }
+
+    }, 40);
+
+}
+
+</script>
+
+</body>
+</html>
