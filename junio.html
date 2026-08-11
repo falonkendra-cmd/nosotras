@@ -1,114 +1,167 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Junio 💌</title>
+    <title>Junio 💌</title>
 
-<link rel="stylesheet" href="style.css">
-```
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- TU CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="mes-container">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
 
-```
-<h1 class="titulo text-center">💌 Junio 💌</h1>
+    <div class="container">
 
-<!-- PREGUNTA DEL MES -->
+        <a class="navbar-brand" href="index.html">
+            ❤️ Sofi & Kendra
+        </a>
 
-<div id="quiz" class="love-box text-center">
+        <div>
 
-    <h2>💖 Preguntita del mes 💖</h2>
+            <a class="btn btn-light m-1" href="index.html">
+                Inicio
+            </a>
 
-    <p>
-        ¿Cuál fue uno de tus recuerdos favoritos conmigo durante junio?
-    </p>
+            <a class="btn btn-light m-1" href="galeria.html">
+                Galería
+            </a>
 
-    <input
-        type="text"
-        id="respuesta"
-        class="form-control"
-        placeholder="Escribe tu respuesta..."
-    >
+            <a class="btn btn-light m-1" href="trivia.html">
+                Trivia
+            </a>
 
-    <br>
+            <a class="btn btn-light m-1" href="carta.html">
+                Carta
+            </a>
 
-    <button class="btn-love" onclick="verificar()">
-        Desbloquear Junio ✨
-    </button>
+            <a class="btn btn-light m-1" href="meses.html">
+                Meses
+            </a>
 
-</div>
-
-
-<!-- CONTENIDO DE JUNIO -->
-
-<div id="contenido" style="display:none;">
-
-    <h2 class="text-center mb-4">
-        📸 Nuestros recuerdos de junio
-    </h2>
-
-
-    <!-- GALERÍA -->
-
-    <div class="instagram-grid">
-
-        <img src="img/ima80.JPG">
-        <img src="img/ima81.JPG">
-        <img src="img/ima82.JPG">
-        <img src="img/ima83.JPG">
-        <img src="img/ima84.JPG">
-        <img src="img/ima85.JPG">
-        <img src="img/ima86.JPG">
+        </div>
 
     </div>
 
+</nav>
 
-    <!-- CARTA -->
 
-    <div class="love-box text-center mt-5">
+<!-- CONTENIDO -->
 
-        <h2>💌 Carta de Junio</h2>
+<div class="container mt-5">
 
-        <div class="carta-container">
+    <div class="mes-container">
 
-            <div class="sobre" onclick="abrirCarta()">
+        <h1 class="titulo text-center">
+            💌 Junio 💌
+        </h1>
 
-                <div class="tapa"></div>
 
-                <div class="carta" id="carta">
+        <!-- PREGUNTA -->
 
-                    <p>
+        <div id="quiz" class="love-box text-center">
 
-                        Junio fue otro mes que quiero guardar
-                        para siempre en mi corazón. 💗
+            <h2>
+                💖 Preguntita del mes 💖
+            </h2>
 
-                        <br><br>
+            <p>
+                ¿Cuál fue uno de tus recuerdos favoritos conmigo durante junio?
+            </p>
 
-                        Cada vez me doy más cuenta de que no necesito
-                        grandes cosas para ser feliz contigo. Muchas
-                        veces simplemente estar juntas, platicar,
-                        reírnos o abrazarnos termina convirtiéndose
-                        en uno de mis momentos favoritos.
+            <input
+                type="text"
+                id="respuesta"
+                class="form-control"
+                placeholder="Escribe tu respuesta..."
+            >
 
-                        <br><br>
+            <br>
 
-                        Gracias por seguir construyendo esta historia
-                        conmigo, por cada recuerdo y por cada pequeño
-                        momento que hacemos nuestro.
+            <button class="btn-love" onclick="verificar()">
+                Desbloquear Junio ✨
+            </button>
 
-                        <br><br>
+        </div>
 
-                        Te amo muchísimo, mi niña. 💖🌙
 
-                    </p>
+        <!-- CONTENIDO -->
+
+        <div id="contenido" style="display:none;">
+
+            <h2 class="text-center mb-4">
+                📸 Nuestros recuerdos de junio
+            </h2>
+
+
+            <!-- GALERÍA -->
+
+            <div class="instagram-grid">
+
+                <img src="img/ima80.JPG">
+                <img src="img/ima81.JPG">
+                <img src="img/ima82.JPG">
+                <img src="img/ima83.JPG">
+                <img src="img/ima84.JPG">
+                <img src="img/ima85.JPG">
+                <img src="img/ima86.JPG">
+
+            </div>
+
+
+            <!-- CARTA -->
+
+            <div class="love-box text-center mt-5">
+
+                <h2>
+                    💌 Carta de Junio
+                </h2>
+
+
+                <div class="carta-container">
+
+                    <div class="sobre" onclick="abrirCarta()">
+
+                        <div class="tapa"></div>
+
+                        <div class="carta" id="carta">
+
+                            <p>
+
+                                Junio fue otro mes que quiero guardar
+                                para siempre en mi corazón. 💗
+
+                                <br><br>
+
+                                Cada vez me doy más cuenta de que no necesito
+                                grandes cosas para ser feliz contigo. Muchas
+                                veces simplemente estar juntas, platicar,
+                                reírnos o abrazarnos termina convirtiéndose
+                                en uno de mis momentos favoritos.
+
+                                <br><br>
+
+                                Gracias por seguir construyendo esta historia
+                                conmigo, por cada recuerdo y por cada pequeño
+                                momento que hacemos nuestro.
+
+                                <br><br>
+
+                                Te amo muchísimo, mi niña. 💖🌙
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -119,19 +172,16 @@
     </div>
 
 </div>
-```
 
-</div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
 async function verificar() {
 
-    const respuesta = document
-        .getElementById("respuesta")
-        .value
-        .trim();
-
+    const respuesta =
+        document.getElementById("respuesta").value.trim();
 
     if (respuesta.length === 0) {
 
@@ -145,7 +195,6 @@ async function verificar() {
     const datos = {
 
         mes: "Junio",
-
         respuesta: respuesta
 
     };
@@ -171,21 +220,13 @@ async function verificar() {
         );
 
 
-        // Mostrar Junio
+        document.getElementById("contenido").style.display = "block";
 
-        document
-            .getElementById("contenido")
-            .style.display = "block";
+        document.getElementById("quiz").style.display = "none";
 
+    }
 
-        // Ocultar pregunta
-
-        document
-            .getElementById("quiz")
-            .style.display = "none";
-
-
-    } catch (error) {
+    catch (error) {
 
         console.error(error);
 
@@ -206,7 +247,54 @@ function abrirCarta() {
 
 </script>
 
+
+<!-- EMOJIS FLOTANTES -->
+
+<script>
+
+function crearEmoji() {
+
+    const emojis = ["❤️", "🦖", "🌙"];
+
+    const emoji = document.createElement("div");
+
+    emoji.innerHTML =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    emoji.style.position = "fixed";
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.top = "100vh";
+    emoji.style.fontSize = "24px";
+    emoji.style.opacity = 0.8;
+    emoji.style.pointerEvents = "none";
+    emoji.style.zIndex = "999";
+
+    document.body.appendChild(emoji);
+
+
+    let mover = setInterval(() => {
+
+        emoji.style.top =
+            (emoji.offsetTop - 2) + "px";
+
+
+        if (emoji.offsetTop < -20) {
+
+            emoji.remove();
+
+            clearInterval(mover);
+
+        }
+
+    }, 30);
+
+}
+
+setInterval(crearEmoji, 700);
+
+</script>
+
+
 </body>
 
 </html>
-
