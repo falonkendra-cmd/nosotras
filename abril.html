@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Abril 🌷</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            ❤️ Sofi & Kendra
+        </a>
+
+        <a class="btn btn-light" href="meses.html">
+            🗓️ Volver a meses
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container mt-5">
+
+    <h1 class="titulo text-center">
+        🌷 Abril 🌷
+    </h1>
+
+
+    <div class="instagram-grid">
+
+        <img src="img/ima45.JPG">
+        <img src="img/ima44.JPG">
+        <img src="img/ima43.JPG">
+        <img src="img/ima32.JPG">
+        <img src="img/ima29.JPG">
+
+        <img src="img/ima50.JPG">
+        <img src="img/ima51.JPG">
+        <img src="img/ima55.JPG">
+        <img src="img/ima57.JPG">
+        <img src="img/ima58.JPG">
+
+    </div>
+
+
+    <div class="text-center mt-4">
+
+        <button
+            class="btn-love"
+            onclick="mostrarCarta()"
+        >
+            💌 Abrir carta
+        </button>
+
+    </div>
+
+
+    <div class="love-box mt-4">
+
+        <p
+            id="cartaAbr"
+            class="text-center"
+            style="display:none; font-size:20px;"
+        ></p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const texto = `hola mi nenita hermosa, este mes fue bastante enriquecedor y reflexivo, disfruto mucho poder aprender de tu mano y que siempre estemos en la disposición de ser mejores para la otra. Gracias por ser un amor dispuesto a crecer conmigo y por amarme de la forma tan bonita en la que lo haces. Eres mi persona favorita en el mundo y espero que toda la vida me alcance para poder regresarte un poquito de todo el amor que me das. Te amo con toda mi alma y un poquito más🌙💖`;
+
+let i = 0;
+
+function mostrarCarta() {
+
+    const carta =
+        document.getElementById("cartaAbr");
+
+    carta.style.display = "block";
+
+    carta.innerHTML = "";
+
+    i = 0;
+
+    const intervalo = setInterval(() => {
+
+        carta.innerHTML += texto[i];
+
+        i++;
+
+        if (i >= texto.length) {
+
+            clearInterval(intervalo);
+
+        }
+
+    }, 40);
+
+}
+
+</script>
+
+</body>
+</html>
