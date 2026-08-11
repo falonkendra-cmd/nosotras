@@ -1,124 +1,96 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'base.html' %}
 
-<head>
+{% block content %}
 
-    <meta charset="UTF-8">
+<div class="mes-container">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Junio 💌</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<nav class="navbar navbar-dark">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="index.html">
-            ❤️ Sofi & Kendra
-        </a>
-
-        <a class="btn btn-light" href="meses.html">
-            🗓️ Volver a meses
-        </a>
-
-    </div>
-
-</nav>
-
-
-<div class="container mt-5">
-
-    <h1 class="titulo text-center">
-        💌 Junio
-    </h1>
-
+    <h1 class="titulo text-center">💌 Junio 💌</h1>
 
     <div id="quiz" class="love-box text-center">
 
-        <h3>
-            💖 Preguntita del mes 💖
-        </h3>
+        <h2>💖 Preguntita del mes 💖</h2>
 
         <p>
-            ¿Cuál fue uno de tus recuerdos favoritos
-            conmigo durante junio?
+            ¿Cuál fue uno de tus recuerdos favoritos conmigo durante junio?
         </p>
 
         <input
             type="text"
             id="respuesta"
-            class="form-control w-75 mx-auto mb-3"
+            class="form-control"
+            placeholder="Escribe tu respuesta..."
         >
 
-        <button
-            class="btn-love"
-            onclick="verificar()"
-        >
+        <br>
+
+        <button class="btn-love" onclick="verificar()">
             Desbloquear Junio ✨
         </button>
 
     </div>
 
 
-    <div
-        id="contenido"
-        style="display:none;"
-    >
+    <div id="contenido" style="display:none;">
 
         <h2 class="text-center mb-4">
             📸 Nuestros recuerdos de junio
         </h2>
 
-
         <div class="instagram-grid">
 
-            <img src="img/ima80.JPG">
-            <img src="img/ima81.JPG">
-            <img src="img/ima82.JPG">
-            <img src="img/ima83.JPG">
-            <img src="img/ima84.JPG">
-            <img src="img/ima85.JPG">
-            <img src="img/ima86.JPG">
+            <img src="{{ url_for('static', filename='img/ima80.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima81.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima82.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima83.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima84.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima85.JPG') }}">
+            <img src="{{ url_for('static', filename='img/ima86.JPG') }}">
 
         </div>
 
 
         <div class="love-box text-center mt-5">
 
-            <h2>
-                💌 Carta de Junio
-            </h2>
+            <h2>💌 Carta de Junio</h2>
 
-            <p>
+            <div class="carta-container">
 
-                Junio fue otro pedacito de nuestra historia
-                que quiero guardar para siempre. 💗
+                <div class="sobre" onclick="abrirCarta()">
 
-                <br><br>
+                    <div class="tapa"></div>
 
-                Gracias por seguir compartiendo conmigo
-                tantos momentos y por hacer que cada mes
-                tenga algo especial.
+                    <div class="carta" id="carta">
 
-                <br><br>
+                        <p>
 
-                Te amo muchísimo, mi niña. 🌙💖
+                            Junio fue otro mes que quiero guardar
+                            para siempre en mi corazón. 💗
 
-            </p>
+                            <br><br>
+
+                            Cada vez me doy más cuenta de que no necesito
+                            grandes cosas para ser feliz contigo. Muchas
+                            veces simplemente estar juntas, platicar,
+                            reírnos o abrazarnos termina convirtiéndose
+                            en uno de mis momentos favoritos.
+
+                            <br><br>
+
+                            Gracias por seguir construyendo esta historia
+                            conmigo, por cada recuerdo y por cada pequeño
+                            momento que hacemos nuestro.
+
+                            <br><br>
+
+                            Te amo muchísimo, mi niña. 💖🌙
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -129,35 +101,66 @@
 
 <script>
 
-function verificar() {
+async function verificar(){
 
-    const respuesta =
-        document
-            .getElementById("respuesta")
-            .value
-            .trim();
+    const respuesta = document.getElementById("respuesta").value.trim();
 
-    if (respuesta.length > 0) {
+    if(respuesta.length === 0){
 
-        document
-            .getElementById("contenido")
-            .style.display = "block";
+        alert("Escríbeme algo antes de desbloquearlo, amor 💗");
 
-        document
-            .getElementById("quiz")
-            .style.display = "none";
+        return;
 
-    } else {
+    }
 
-        alert(
-            "Contéstame algo bonito 💖"
+    const datos = {
+
+        mes: "Junio",
+        respuesta: respuesta
+
+    };
+
+    try{
+
+        await fetch(
+            "https://script.google.com/macros/s/AKfycbwpOOkjOcgJQ7ZZf8t0M_BzqXsmVe3jmyHkmI_RtY0TjOdRxATg7yRXLTENfIjyJrok/exec",
+            {
+                method: "POST",
+                mode: "no-cors",
+
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+
+                body: JSON.stringify(datos)
+            }
         );
+
+        document.getElementById("contenido").style.display = "block";
+
+        document.getElementById("quiz").style.display = "none";
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        alert("Hubo un pequeño problema, intenta otra vez 💗");
 
     }
 
 }
 
+
+function abrirCarta(){
+
+    document
+        .getElementById("carta")
+        .classList.toggle("abrir");
+
+}
+
 </script>
 
-</body>
-</html>
+{% endblock %}
