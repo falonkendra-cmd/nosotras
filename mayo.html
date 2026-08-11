@@ -170,29 +170,52 @@
 
 <script>
 
-function verificar() {
+async function verificar(){
 
-    const respuesta =
-        document
-            .getElementById("respuesta")
-            .value
-            .trim();
+    const respuesta = document.getElementById("respuesta").value.trim();
 
-    if (respuesta.length > 0) {
+    if(respuesta.length === 0){
 
-        document
-            .getElementById("contenido")
-            .style.display = "block";
+        alert("Escríbeme algo amor 💖");
 
-        document
-            .getElementById("quiz")
-            .style.display = "none";
+        return;
 
-    } else {
+    }
 
-        alert(
-            "Contéstame algo amor 😌💖"
-        );
+    const datos = {
+
+        mes: "Mayo",
+        respuesta: respuesta
+
+    };
+
+    try{
+
+        await fetch("https://script.google.com/macros/s/AKfycbwpOOkjOcgJQ7ZZf8t0M_BzqXsmVe3jmyHkmI_RtY0TjOdRxATg7yRXLTENfIjyJrok/exec", {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+
+                "Content-Type": "text/plain;charset=utf-8"
+
+            },
+
+            body: JSON.stringify(datos)
+
+        });
+
+        document.getElementById("contenido").style.display="block";
+
+        document.getElementById("quiz").style.display="none";
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Hubo un pequeño problema, intenta otra vez 💗");
 
     }
 
