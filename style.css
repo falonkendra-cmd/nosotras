@@ -1,1 +1,435 @@
+body {
+    background-color: #f6e6e8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background-color: #8b1e3f;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+.titulo {
+    font-size: 45px;
+    font-weight: bold;
+    color: #8b1e3f;
+}
+
+h1,
+h2,
+h3 {
+    color: #8b1e3f;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.botones-principales {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.btn-love {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #800000;
+    color: white;
+
+    border: none;
+    padding: 12px 25px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-love:hover {
+    background-color: #5a0000;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+
+.imagen-principal {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+    margin: auto;
+
+    border: 4px solid #a8324a;
+
+    box-shadow: 0 0 20px rgba(168, 50, 74, 0.6);
+}
+
+/* =========================
+   CAJAS
+========================= */
+
+.love-box {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-top: 25px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.instagram-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.instagram-grid img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.instagram-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   BOTONES DE MESES
+========================= */
+
+.botones {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    max-width: 400px;
+
+    margin: auto;
+
+    margin-top: 20px;
+}
+
+.botones .btn-love {
+    width: 100%;
+}
+
+.mes-bloqueado {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.5);
+}
+
+/* =========================
+   CARTAS
+========================= */
+
+.carta-container {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 60px;
+
+    margin-bottom: 50px;
+}
+
+.sobre {
+    width: 300px;
+
+    height: 200px;
+
+    background: #a8324a;
+
+    position: relative;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+
+.tapa {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #8b1e3f;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 50%
+    );
+}
+
+.carta {
+    position: absolute;
+
+    top: 20px;
+    left: 10px;
+
+    width: 280px;
+
+    height: 160px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    transition: 0.6s;
+
+    overflow: auto;
+
+    z-index: 5;
+}
+
+.carta.abrir {
+    transform: translateY(-80px);
+
+    opacity: 1;
+}
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia-boton {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    margin-bottom: 40px;
+}
+
+.btn-historia {
+    padding: 15px 30px;
+}
+
+.historia-timeline {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.historia-card {
+    background: white;
+
+    padding: 25px;
+
+    margin: 25px 0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.historia-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   SORPRESAS
+========================= */
+
+.sorpresa-container {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+.btn-sorpresa {
+    background: #800000;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-sorpresa:hover {
+    background: #5a0000;
+
+    transform: scale(1.05);
+}
+
+.sorpresa {
+    background: white;
+
+    padding: 30px;
+
+    margin: 30px auto;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+    animation: aparecer 0.8s ease;
+}
+
+.regalo {
+    margin-top: 30px;
+
+    animation: aparecer 0.8s ease;
+}
+
+.sorpresa-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.tarjeta-sorpresa {
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.tarjeta-sorpresa:hover {
+    transform: scale(1.03);
+}
+
+.carta-final {
+    background: #fff;
+
+    padding: 30px;
+
+    margin-top: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .botones {
+        grid-template-columns: 1fr;
+    }
+
+    .sorpresa-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
