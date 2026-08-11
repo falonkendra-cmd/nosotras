@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Febrero 💘</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            ❤️ Sofi & Kendra
+        </a>
+
+        <a class="btn btn-light" href="meses.html">
+            🗓️ Volver a meses
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container mt-5">
+
+    <h1 class="titulo text-center">
+        Febrero 💘
+    </h1>
+
+
+    <div id="quiz" class="love-box text-center">
+
+        <p>
+            ¿Cuál fue tu momento favorito conmigo este mes?
+        </p>
+
+        <input
+            type="text"
+            id="respuesta"
+            class="form-control w-75 mx-auto"
+        >
+
+        <br>
+
+        <button
+            class="btn-love"
+            onclick="verificar()"
+        >
+            Desbloquear
+        </button>
+
+    </div>
+
+
+    <div
+        id="contenido"
+        style="display:none;"
+    >
+
+        <div class="instagram-grid">
+
+            <img src="img/ima14.JPG">
+            <img src="img/ima15.JPG">
+            <img src="img/ima16.JPG">
+            <img src="img/ima17.JPG">
+            <img src="img/ima18.JPG">
+            <img src="img/ima19.JPG">
+            <img src="img/ima20.JPG">
+            <img src="img/ima21.JPG">
+            <img src="img/ima22.JPG">
+            <img src="img/ima23.JPG">
+            <img src="img/ima24.JPG">
+            <img src="img/ima25.JPG">
+            <img src="img/ima26.JPG">
+            <img src="img/ima27.JPG">
+            <img src="img/ima28.JPG">
+
+        </div>
+
+
+        <div class="text-center mt-4">
+
+            <button
+                class="btn-love"
+                onclick="abrirCarta()"
+            >
+                💌 Abrir carta
+            </button>
+
+        </div>
+
+
+        <p
+            id="cartaFeb"
+            class="love-box text-center"
+            style="display:none;"
+        >
+
+            Febrero contigo fue aún más especial...
+            cada momento contigo se siente como un
+            lugarcito seguro.
+
+            Me encantó poder pasar el 14 de febrero
+            a tu lado.
+
+            De verdad no sabes lo precioso que fue
+            para mí.
+
+            Me encantó que pasáramos mucho tiempo
+            juntitas en mi uni y que pudiéramos tener
+            citas bonitas.
+
+            Te amo preciosa 💖🌙
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function verificar() {
+
+    const respuesta =
+        document
+            .getElementById("respuesta")
+            .value
+            .trim();
+
+    if (respuesta.length > 0) {
+
+        document
+            .getElementById("contenido")
+            .style.display = "block";
+
+        document
+            .getElementById("quiz")
+            .style.display = "none";
+
+    } else {
+
+        alert(
+            "Tienes que poner algo amor 😌💖"
+        );
+
+    }
+
+}
+
+
+function abrirCarta() {
+
+    document
+        .getElementById("cartaFeb")
+        .style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
