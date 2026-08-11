@@ -1,1 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Julio ☀️</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            ❤️ Sofi & Kendra
+        </a>
+
+        <a class="btn btn-light" href="meses.html">
+            🗓️ Volver a meses
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container mt-5">
+
+    <div class="mes-container">
+
+        <h1 class="titulo text-center">
+            ☀️ Julio ☀️
+        </h1>
+
+
+        <div
+            id="quiz"
+            class="love-box text-center"
+        >
+
+            <h2>
+                💖 Preguntita del mes 💖
+            </h2>
+
+            <p>
+                ¿Cuál fue uno de tus momentos favoritos
+                conmigo durante julio?
+            </p>
+
+            <input
+                type="text"
+                id="respuesta"
+                class="form-control"
+                placeholder="Escribe tu respuesta..."
+            >
+
+            <br>
+
+            <button
+                class="btn-love"
+                onclick="verificar()"
+            >
+                Desbloquear Julio ✨
+            </button>
+
+        </div>
+
+
+        <div
+            id="contenido"
+            style="display:none;"
+        >
+
+            <h2 class="text-center">
+                📸 Nuestros recuerdos de julio
+            </h2>
+
+
+            <div class="instagram-grid">
+
+                <img src="img/ima87.JPG">
+                <img src="img/ima88.JPG">
+                <img src="img/ima89.JPG">
+                <img src="img/ima90.JPG">
+                <img src="img/ima91.JPG">
+                <img src="img/ima92.JPG">
+                <img src="img/ima93.JPG">
+                <img src="img/ima94.JPG">
+                <img src="img/ima95.JPG">
+                <img src="img/ima96.JPG">
+                <img src="img/ima97.JPG">
+                <img src="img/ima98.JPG">
+                <img src="img/ima99.JPG">
+                <img src="img/ima100.JPG">
+                <img src="img/ima101.JPG">
+                <img src="img/ima102.JPG">
+                <img src="img/ima103.JPG">
+                <img src="img/ima104.JPG">
+                <img src="img/ima105.JPG">
+                <img src="img/ima106.JPG">
+                <img src="img/ima107.JPG">
+                <img src="img/ima108.JPG">
+                <img src="img/ima109.JPG">
+                <img src="img/ima110.JPG">
+                <img src="img/ima111.JPG">
+                <img src="img/ima112.JPG">
+                <img src="img/ima113.JPG">
+                <img src="img/ima114.JPG">
+
+            </div>
+
+
+            <div class="love-box text-center mt-5">
+
+                <h2>
+                    💌 Carta de Julio
+                </h2>
+
+
+                <div class="carta-container">
+
+                    <div
+                        class="sobre"
+                        onclick="abrirCarta()"
+                    >
+
+                        <div class="tapa"></div>
+
+                        <div
+                            class="carta"
+                            id="carta"
+                        >
+
+                            <p>
+
+                                Julio fue otro pedacito de
+                                nuestra historia que quiero
+                                guardar para siempre. ☀️💗
+
+                                <br><br>
+
+                                Me encanta mirar todas estas
+                                fotos y darme cuenta de la
+                                cantidad de momentos que hemos
+                                ido construyendo juntas.
+
+                                Algunos fueron grandes,
+                                otros probablemente parecían
+                                pequeños en ese momento, pero
+                                todos terminaron siendo recuerdos
+                                que ahora significan muchísimo
+                                para mí.
+
+                                <br><br>
+
+                                Me encantó tener la oportunidad
+                                de pasar tu cumpleaños contigo
+                                y de que este mes hayamos logrado
+                                algo que queríamos hacer desde
+                                hace mucho tiempo: dormir juntitas.
+
+                                <br><br>
+
+                                De verdad no hay parte de mí
+                                que no quedara completamente
+                                obsesionada contigo y que no me
+                                hiciera saber que definitivamente
+                                no hay otro lugar en el que
+                                quisiera pasar el resto de mi vida
+                                que no sean tus brazos.
+
+                                <br><br>
+
+                                Gracias por seguir compartiendo
+                                tu vida conmigo, por hacerme
+                                reír, por escucharme, por
+                                abrazarme y por hacer que incluso
+                                los días normales se sientan
+                                especiales.
+
+                                <br><br>
+
+                                Gracias por llenarme de amor y
+                                por siempre considerarme en tu
+                                vida, por querer pasar tiempo
+                                conmigo y por amarme.
+
+                                <br><br>
+
+                                Te amo muchísimo, mi niña. 💗
+
+                                <br><br>
+
+                                Y todavía nos quedan muchísimos
+                                meses, recuerdos y aventuras por
+                                vivir juntas. ✨
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sorpresa-container">
+
+                <button
+                    class="btn-sorpresa"
+                    onclick="mostrarSorpresa()"
+                >
+                    🎁 ¿Hay algo más?
+                </button>
+
+            </div>
+
+
+            <div
+                id="sorpresa"
+                class="sorpresa"
+                style="display:none;"
+            >
+
+                <h2>
+                    🥹 Espera...
+                </h2>
+
+                <p>
+                    Pensabas que ya habíamos terminado
+                    con julio, ¿verdad?
+                </p>
+
+                <button
+                    class="btn-love"
+                    onclick="abrirRegalo()"
+                >
+                    🎁 Abrir sorpresa
+                </button>
+
+            </div>
+
+
+            <div
+                id="regalo"
+                class="regalo"
+                style="display:none;"
+            >
+
+                <div class="love-box text-center">
+
+                    <h2>
+                        💗 Una pequeña sorpresa para ti
+                    </h2>
+
+                    <p>
+
+                        Hay muchas cosas que podría regalarte,
+                        pero quería darte algo que pudiéramos
+                        guardar para siempre.
+
+                    </p>
+
+                </div>
+
+
+                <div class="sorpresa-grid">
+
+                    <div class="tarjeta-sorpresa">
+
+                        <h3>
+                            🫶 Algo que amo de ti
+                        </h3>
+
+                        <p>
+
+                            Amo como haces que todo en mí
+                            sienta tranquilidad e intensidad
+                            al mismo tiempo.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarjeta-sorpresa">
+
+                        <h3>
+                            📸 Un recuerdo
+                        </h3>
+
+                        <p>
+
+                            Todos estos momentos que hemos
+                            guardado significan muchísimo más
+                            para mí de lo que probablemente
+                            imaginas.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarjeta-sorpresa">
+
+                        <h3>
+                            🌎 Un sueño
+                        </h3>
+
+                        <p>
+
+                            Quiero conocer muchos lugares
+                            contigo, pero sobre todo quiero
+                            seguir creando recuerdos juntas.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarjeta-sorpresa">
+
+                        <h3>
+                            💍 Lo que quiero
+                        </h3>
+
+                        <p>
+
+                            Seguir teniendo meses contigo.
+
+                            <br>
+
+                            Muchos meses.
+
+                            <br>
+
+                            Muchos años.
+
+                            <br>
+
+                            Muchas historias.
+
+                            <br>
+
+                            Y una vida.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carta-final">
+
+                    <h2>
+                        💌 Para ti
+                    </h2>
+
+                    <p>
+
+                        Si algún día volvemos a esta página
+                        y vemos todo lo que vivimos, espero
+                        que podamos mirar atrás y sonreír por
+                        todo lo que construimos.
+
+                        <br><br>
+
+                        Gracias por ser tú.
+
+                        <br><br>
+
+                        Gracias por dejarme quererte,
+                        por dejarme acompañarte y por
+                        compartir conmigo tantos pedacitos
+                        de tu vida.
+
+                        <br><br>
+
+                        No sé exactamente qué nos espera
+                        en los siguientes meses, pero sí sé algo:
+
+                        <br><br>
+
+                        <strong>
+                            quiero vivirlos contigo. ❤️
+                        </strong>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function verificar() {
+
+    document
+        .getElementById("contenido")
+        .style.display = "block";
+
+    document
+        .getElementById("quiz")
+        .style.display = "none";
+
+}
+
+
+function abrirCarta() {
+
+    document
+        .getElementById("carta")
+        .classList
+        .toggle("abrir");
+
+}
+
+
+function mostrarSorpresa() {
+
+    document
+        .getElementById("sorpresa")
+        .style.display = "block";
+
+}
+
+
+function abrirRegalo() {
+
+    document
+        .getElementById("regalo")
+        .style.display = "block";
+
+    document
+        .getElementById("sorpresa")
+        .style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>
